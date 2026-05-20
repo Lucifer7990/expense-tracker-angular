@@ -1,0 +1,36 @@
+<div class="glass-card rounded-2xl p-4">
+        <div class="flex flex-col sm:flex-row gap-3">
+
+          <!-- Search -->
+          <!-- Angular: [(ngModel)]="searchQuery" -->
+          <div class="relative flex-1">
+            <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" placeholder="Search expenses..."
+              class="w-full rounded-xl pl-9 pr-3.5 py-2.5 text-sm focus:outline-none" />
+          </div>
+
+          <!-- Filter Dropdown -->
+          <!-- Angular: [(ngModel)]="filterCategory" -->
+          <select class="rounded-xl px-3.5 py-2.5 text-sm focus:outline-none sm:w-40 cursor-pointer">
+            <option value="all">All Categories</option>
+            <option value="food">Food</option>
+            <option value="travel">Travel</option>
+            <option value="shopping">Shopping</option>
+            <option value="bills">Bills</option>
+            <option value="health">Health</option>
+            <option value="other">Other</option>
+          </select>
+
+          <!-- Sort -->
+          <select class="rounded-xl px-3.5 py-2.5 text-sm focus:outline-none sm:w-36 cursor-pointer">
+            <option>Newest First</option>
+            <option>Oldest First</option>
+            <option>Highest Amount</option>
+            <option>Lowest Amount</option>
+          </select>
+        </div>
+      </div>
