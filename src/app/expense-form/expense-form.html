@@ -1,0 +1,70 @@
+<!-- Background Overlay with Blur -->
+<!-- Angular: Use *ngIf="isPopupOpen" or @if(isPopupOpen) to toggle visibility -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-sm p-4 transition-all">
+    
+    <!-- Modal Container -->
+    <div class="relative w-full max-w-md">
+        
+        <!-- Optional Close Button -->
+        <!-- Angular: (click)="closePopup()" -->
+        <button class="absolute top-4 right-4 z-10 text-slate-400 hover:text-white transition-colors p-1" aria-label="Close modal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <!-- Your Existing Glass Card -->
+        <div class="glass-card rounded-2xl p-5 shadow-2xl shadow-black/50 border border-white/10 relative overflow-hidden">
+            
+            <h2 class="text-sm font-semibold heading text-white mb-4 flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-violet-600/30 flex items-center justify-center text-violet-400 text-xs">+</span>
+                Add New Expense
+            </h2>
+
+            <!-- Angular: use [(ngModel)] on each field -->
+            <div class="space-y-3">
+
+                <!-- Title -->
+                <div>
+                    <label class="text-xs text-slate-400 mb-1.5 block">Expense Title</label>
+                    <input type="text" placeholder="e.g. Lunch at Bistro"
+                        class="w-full rounded-xl px-3.5 py-2.5 text-sm focus:outline-none bg-white/5 border border-white/10 text-white placeholder:text-slate-500 focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all" />
+                </div>
+
+                <!-- Amount -->
+                <div>
+                    <label class="text-xs text-slate-400 mb-1.5 block">Amount (₹)</label>
+                    <input type="number" placeholder="0.00"
+                        class="w-full rounded-xl px-3.5 py-2.5 text-sm focus:outline-none bg-white/5 border border-white/10 text-white placeholder:text-slate-500 focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all" />
+                </div>
+
+                <!-- Category -->
+                <div>
+                    <label class="text-xs text-slate-400 mb-1.5 block">Category</label>
+                    <select class="w-full rounded-xl px-3.5 py-2.5 text-sm focus:outline-none cursor-pointer bg-white/5 border border-white/10 text-white focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all appearance-none">
+                        <option value="" disabled selected class="bg-slate-900">Select a category</option>
+                        <option value="food" class="bg-slate-900">🥗 Food</option>
+                        <option value="travel" class="bg-slate-900">✈️ Travel</option>
+                        <option value="shopping" class="bg-slate-900">🛍️ Shopping</option>
+                        <option value="bills" class="bg-slate-900">📄 Bills</option>
+                        <option value="health" class="bg-slate-900">💊 Health</option>
+                        <option value="other" class="bg-slate-900">📦 Other</option>
+                    </select>
+                </div>
+
+                <!-- Date -->
+                <div>
+                    <label class="text-xs text-slate-400 mb-1.5 block">Date</label>
+                    <input type="date" value="2026-05-20"
+                        class="w-full rounded-xl px-3.5 py-2.5 text-sm focus:outline-none bg-white/5 border border-white/10 text-white focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/50 transition-all [color-scheme:dark]" />
+                </div>
+
+                <!-- Submit Button -->
+                <button class="btn-primary w-full rounded-xl py-2.5 text-sm font-semibold text-white heading mt-3 bg-violet-600 hover:bg-violet-500 transition-colors">
+                    + Add Expense
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

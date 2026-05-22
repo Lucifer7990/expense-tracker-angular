@@ -1,52 +1,18 @@
 <div class="bg-slate-950 text-slate-200 min-h-screen">
 
   <!-- Subtle radial glow background -->
-  <div class="fixed inset-0 pointer-events-none"
-    style="background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124,58,237,0.12), transparent);"></div>
+  <div class="fixed inset-0 pointer-events-none" style="background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(124,58,237,0.12), transparent);"></div>
 
-  <app-nav-bar></app-nav-bar>
+  <app-nav-bar/>
+  <app-expense-form/>
   <!-- ─── MAIN LAYOUT ─── -->
   <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-6 lg:py-8">
     <!-- ─── STAT CARDS ─── -->
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
-      <app-status-card></app-status-card>
-      <app-status-card></app-status-card>
-      <app-status-card></app-status-card>
-      <app-status-card></app-status-card>
-    </div>
-
+      <app-status-overview/>
     <!-- ─── RIGHT: EXPENSE LIST ─── -->
     <div class="flex flex-col gap-4">
-
-      <app-search-bar></app-search-bar>
-      <!-- Expense List -->
-      <div class="glass-card rounded-2xl overflow-hidden">
-
-        <!-- List Header -->
-        <div class="px-5 py-3.5 border-b border-white/[0.06] flex items-center justify-between">
-          <h2 class="text-sm font-semibold heading text-white">All Expenses</h2>
-          <span class="text-xs text-slate-400">6 items</span>
-        </div>
-
-        <!-- ─── EXPENSE ROWS ─── -->
-        <div class="divide-y divide-white/[0.04]">
-          <app-expense-row></app-expense-row>
-        </div><!-- end rows -->
-
-        <!-- Total Row -->
-        <div class="px-5 py-3.5 border-t border-white/[0.08] flex items-center justify-between bg-white/[0.02]">
-          <div class="flex items-center gap-2">
-            <span class="text-xs text-slate-400 uppercase tracking-wider">Total</span>
-            <span class="text-xs text-slate-500">(6 expenses)</span>
-          </div>
-          <p class="text-base font-bold heading text-white">₹12,450.00</p>
-        </div>
-
-      </div><!-- end glass-card expense list -->
-
-    </div><!-- end right column -->
-
+      <app-search-bar/>
+      <app-expense-list/>
+    </div>
   </main>
-
-
 </div>
